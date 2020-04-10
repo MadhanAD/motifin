@@ -18,7 +18,6 @@ export const BoardComponent = (props: BoardProps) => {
 
     let canvasRef = useRef<Stage>(null);
     let layerRef = useRef<Konva.Layer>(null);
-    const contentContainerRef = useRef<HTMLDivElement>(null);
     const [stageWidth, setStageWidth] = useState(800);
     const [stageHeight, setStageHeight] = useState(800);
     const [zoom, setZoom] = useState<number>(40);
@@ -97,68 +96,65 @@ export const BoardComponent = (props: BoardProps) => {
                 >+</Button>
             </div>
             <div className={classes.bodyContainer}>
-                <div className={classes.contentContainer} ref={contentContainerRef}>
-                    <div className={classes.content}>
-
-                        <Stage className={classes.stageStyle}
-                               style={getZoomedLayout(zoom)}
-                            // style={dynamicStyleForBoard(layerMenuOption)}
-                               ref={canvasRef}
-                               width={stageWidth}
-                               height={stageHeight}
-                               onMouseDown={event => {
-                                   const clickedOnEmpty = event.target === event.target.getStage()
-                                   if (clickedOnEmpty) {
-                                       // deselect all element
-                                       dispatch(deselectLayerAction());
-                                   }
-                               }}
+                <div className={classes.contentContainer}
+                     style={dynamicStyleForBoard(layerMenuOption)}>
+                    <Stage
+                        // style={getZoomedLayout(zoom)}
+                        ref={canvasRef}
+                        width={stageWidth}
+                        height={stageHeight}
+                        onMouseDown={event => {
+                            const clickedOnEmpty = event.target === event.target.getStage()
+                            if (clickedOnEmpty) {
+                                // deselect all element
+                                dispatch(deselectLayerAction());
+                            }
+                        }}
+                    >
+                        <Layer
+                            className={classes.layerStyle}
+                            x={0}
+                            y={0}
+                            ref={layerRef}
+                            width={400}
+                            height={400}
                         >
-                            <Layer
-                                className={classes.layerStyle}
-                                x={100}
-                                y={100}
-                                ref={layerRef}
-                                width={400}
-                                height={400}
-                            >
-                                {
-                                    layerModelArray?.map((data: LayerModel) => {
-                                        if (data.type === LayerType.IMAGE) {
-                                            return (
-                                                <ImageComponent
-                                                    key={data.id}
-                                                    shape={{x: 150, y: 250}}
-                                                    imagePath={demo1Img}
-                                                    isSelected={data.isSelected}
-                                                    onSelect={(data: ImageProps) => {
-                                                        // calls only on select
-                                                        const layerModel: LayerModel = {
-                                                            id: data.id,
-                                                            action: LayerAction.SELECT,
-                                                            type: LayerType.IMAGE
-                                                        };
-                                                        dispatch(selectLayerAction(layerModel))
-                                                    }}
-                                                    onChange={(data) => {
-                                                    }}/>
-                                            )
-                                        } else if (data.type === LayerType.TEXT) {
-                                            return (
-                                                <TextComponent
-                                                    x={150}
-                                                    y={250}
-                                                    id={data.id}
-                                                    text={"Text from board props"}
-                                                    isSelected={data.isSelected}
-                                                />
-                                            )
-                                        }
-                                    })
-                                }
-                            </Layer>
-                        </Stage>
-                    </div>
+                            {
+                                layerModelArray?.map((data: LayerModel) => {
+                                    if (data.type === LayerType.IMAGE) {
+                                        return (
+                                            <ImageComponent
+                                                key={data.id}
+                                                shape={{x: 150, y: 250}}
+                                                imagePath={demo1Img}
+                                                isSelected={data.isSelected}
+                                                onSelect={(data: ImageProps) => {
+                                                    // calls only on select
+                                                    const layerModel: LayerModel = {
+                                                        id: data.id,
+                                                        action: LayerAction.SELECT,
+                                                        type: LayerType.IMAGE
+                                                    };
+                                                    dispatch(selectLayerAction(layerModel))
+                                                }}
+                                                onChange={(data) => {
+                                                }}/>
+                                        )
+                                    } else if (data.type === LayerType.TEXT) {
+                                        return (
+                                            <TextComponent
+                                                x={150}
+                                                y={250}
+                                                id={data.id}
+                                                text={"Text from board props"}
+                                                isSelected={data.isSelected}
+                                            />
+                                        )
+                                    }
+                                })
+                            }
+                        </Layer>
+                    </Stage>
                 </div>
             </div>
             <div className={classes.footerContainer}>
