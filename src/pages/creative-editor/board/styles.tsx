@@ -25,21 +25,24 @@ export const useStyles = makeStyles({
         flex: 8,
         height: "80vh",
         display: "flex",
-        flexDirection:"row",
-        justifyContent:"center",
+        flexDirection: "row",
+        justifyContent: "center",
         position: "relative",
         overflowX: "scroll",
-        overflowY:"scroll",
+        overflowY: "scroll",
         backgroundColor: "#ecd893",
     },
     contentContainer: {
         backgroundColor: "#62218e",
         display: "flex",
         flexDirection: "row",
-        justifyContent:"center",
+        justifyContent: "center",
         width: "100%",
         height: "100%",
         position: "absolute",
+    },
+    stageStyle: {
+        backgroundColor: "#997766"
     },
     layerStyle: {
         backgroundColor: "#fff"

@@ -10,8 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d230885-27ed-464d-9994-fc243b195ae1" name="Default Changelist" comment="Image and Text resizable task was completed">
-      <change afterPath="$PROJECT_DIR$/src/pages/creative-editor/board/styles.css" afterDir="false" />
+    <list default="true" id="6d230885-27ed-464d-9994-fc243b195ae1" name="Default Changelist" comment="Editor container style corrections are made.&#10;Zoom options is in pending">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/board/BoardComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/board/BoardComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/board/styles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/board/styles.tsx" afterDir="false" />
@@ -116,7 +115,7 @@
       <workItem from="1586413782208" duration="650000" />
       <workItem from="1586418248327" duration="124000" />
       <workItem from="1586418399780" duration="667000" />
-      <workItem from="1586502811069" duration="14630000" />
+      <workItem from="1586502811069" duration="17377000" />
     </task>
     <task id="LOCAL-00001" summary="Image and Text resizable task was completed">
       <created>1586514124225</created>
@@ -125,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586514124225</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Editor container style corrections are made.&#10;Zoom options is in pending">
+      <created>1586528584519</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1586528584519</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,7 +150,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Image and Text resizable task was completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Image and Text resizable task was completed" />
+    <MESSAGE value="Editor container style corrections are made.&#10;Zoom options is in pending" />
+    <option name="LAST_COMMIT_MESSAGE" value="Editor container style corrections are made.&#10;Zoom options is in pending" />
   </component>
   <component name="WindowStateProjectService">
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586018978028">

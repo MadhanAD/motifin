@@ -11,6 +11,7 @@ import TextComponent, {TextProps} from "../../../components/TextComponent";
 import Konva from "konva";
 import ImageComponent, {ImageProps} from "../../../components/ImageComponent";
 import {deselectLayerAction, selectLayerAction} from "../../../app-redux/creative-editor/actionCreators";
+import {KonvaEventObject} from "konva/types/Node";
 
 export const BoardComponent = (props: BoardProps) => {
 
@@ -18,10 +19,14 @@ export const BoardComponent = (props: BoardProps) => {
 
     let canvasRef = useRef<Stage>(null);
     let layerRef = useRef<Konva.Layer>(null);
+
     const [stageWidth, setStageWidth] = useState(800);
     const [stageHeight, setStageHeight] = useState(800);
     const [zoom, setZoom] = useState<number>(40);
-    // let stageWidth = 400,stageHeight = 400;
+    const [stageScale, setStageScale] = useState<number>(1);
+    const [stageScaleX, setStageScaleX] = useState<number>(0);
+    const [stageScaleY, setStageScaleY] = useState<number>(0);
+
     const classes = useStyles();
     const [layerMenuOption, setLayerMenuOption] = useState(1);
     const {layerModelArray} = useSelector<AppState, BoardProps>(state => {
@@ -40,6 +45,26 @@ export const BoardComponent = (props: BoardProps) => {
         link.click();
         document.body.removeChild(link);
         // delete link;
+    }
+
+    const zoomClick = (e: KonvaEventObject<WheelEvent>) => {
+        e.evt.preventDefault();
+        const scaleBy = 1.02;
+        const stage = e.target.getStage();
+        const oldScale = stage?.scaleX();
+        const mousePointTo = {
+            // @ts-ignore
+            x: stage?.getPointerPosition()?.x / oldScale - stage?.x() / oldScale,
+            // @ts-ignore
+            y: stage?.getPointerPosition()?.y / oldScale - stage?.y() / oldScale
+        };
+        // @ts-ignore
+        const newScale = e.evt.deltaY > 0 ? oldScale * scaleBy : oldScale / scaleBy;
+        setStageScale(newScale);
+        // @ts-ignore
+        setStageScaleX(-(mousePointTo.x - stage?.getPointerPosition()?.x / newScale) * newScale)
+        // @ts-ignore
+        setStageScaleY(-(mousePointTo.y - stage?.getPointerPosition()?.y / newScale) * newScale)
     }
 
     return (
@@ -103,6 +128,11 @@ export const BoardComponent = (props: BoardProps) => {
                         ref={canvasRef}
                         width={stageWidth}
                         height={stageHeight}
+                        scaleX={stageScale}
+                        scaleY={stageScale}
+                        x={stageScaleX}
+                        y={stageScaleY}
+                        onWheel={zoomClick}
                         onMouseDown={event => {
                             const clickedOnEmpty = event.target === event.target.getStage()
                             if (clickedOnEmpty) {
@@ -125,7 +155,7 @@ export const BoardComponent = (props: BoardProps) => {
                                         return (
                                             <ImageComponent
                                                 key={data.id}
-                                                shape={{x: 150, y: 250}}
+                                                shape={{x: 50, y: 50}}
                                                 imagePath={demo1Img}
                                                 isSelected={data.isSelected}
                                                 onSelect={(data: ImageProps) => {
@@ -143,8 +173,8 @@ export const BoardComponent = (props: BoardProps) => {
                                     } else if (data.type === LayerType.TEXT) {
                                         return (
                                             <TextComponent
-                                                x={150}
-                                                y={250}
+                                                x={50}
+                                                y={50}
                                                 id={data.id}
                                                 text={"Text from board props"}
                                                 isSelected={data.isSelected}
