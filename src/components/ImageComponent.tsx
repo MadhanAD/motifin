@@ -42,8 +42,7 @@ const ImageComponent = (props: ImageProps) => {
                        if (props.onSelect != null) {
                            props.onSelect({...props})
                        }
-                   }
-                   }
+                   }}
             />
             {
                 props.isSelected && (

@@ -1,5 +1,5 @@
 import {makeStyles} from "@material-ui/core/styles";
-import {green, red} from "@material-ui/core/colors";
+import {LayoutVariantSize} from "../../../models/LayoutVariant";
 
 export const useStyles = makeStyles({
     rootContainer: {
@@ -27,6 +27,7 @@ export const useStyles = makeStyles({
         display: "flex",
         flexDirection: "row",
         justifyContent: "center",
+        alignItems: "center",
         position: "relative",
         overflowX: "scroll",
         overflowY: "scroll",
@@ -45,7 +46,7 @@ export const useStyles = makeStyles({
         backgroundColor: "#997766"
     },
     layerStyle: {
-        backgroundColor: "#fff"
+        backgroundColor: "#a05a5a"
     },
     footerContainer: {
         flex: 1,
@@ -58,31 +59,18 @@ export const useStyles = makeStyles({
 });
 
 
-export const dynamicStyleForBoard = (menuOption: number) => {
-    let styles = {
-        width: "400px",
-        height: "400px",
+export const dynamicStyleForBoard = (layoutVariantSize: LayoutVariantSize) => {
+    return {
+        width: `${layoutVariantSize.width}px`,
+        height: `${layoutVariantSize.height}px`,
         backgroundColor: "#fff",
-        margin: "0%"
     };
-
-    if (menuOption === 1) {
-        // styles.paddingBottom = "36.25%"
-        styles.width = "1080px";
-        styles.height = "1200px";
-
-    } else if (menuOption === 2) {
-        // styles.paddingBottom = "60%"
-        styles.width = "400px";
-        styles.height = "400px";
-        styles.margin = "5%";
-    }
-
-    return styles;
 };
 
-export const getZoomedLayout = (value: number) => {
+export const getTransformedStyle = (value: number, x: number, y: number) => {
     return {
-        zoom: `${value}%`
+        transform: `scale(0.4)`,
+        positionX: x,
+        positionY: y
     }
 }

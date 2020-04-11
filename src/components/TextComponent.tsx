@@ -1,9 +1,6 @@
-import {Stage, Text, Transformer} from "react-konva";
-import {Layer} from "konva/types/Layer";
+import {Text, Transformer} from "react-konva";
 import Konva from "konva";
 import React, {Fragment, useRef} from "react";
-
-const Uuid = require("uuid");
 
 export interface TextProps {
     id?: string;
@@ -43,9 +40,7 @@ const TextComponent = (props: TextProps) => {
                 )
             }
         </Fragment>
-
     )
 };
-
 
 export default TextComponent

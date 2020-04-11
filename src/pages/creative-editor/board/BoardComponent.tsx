@@ -1,5 +1,5 @@
 import React, {useRef, useState} from "react";
-import {dynamicStyleForBoard, getZoomedLayout, useStyles} from "./styles";
+import {dynamicStyleForBoard, getTransformedStyle, useStyles} from "./styles";
 import {BoardProps} from "../Props";
 import {useDispatch, useSelector} from "react-redux";
 import {AppState} from "../../../app-redux/AppState";
@@ -7,11 +7,12 @@ import {LayerAction, LayerModel, LayerType} from "../../../models/LayerModel";
 import {Button, FormControl, InputLabel, MenuItem, Select} from "@material-ui/core";
 import {Layer, Stage} from "react-konva";
 import demo1Img from "../../../assets/demo1.jpg";
-import TextComponent, {TextProps} from "../../../components/TextComponent";
+import TextComponent from "../../../components/TextComponent";
 import Konva from "konva";
 import ImageComponent, {ImageProps} from "../../../components/ImageComponent";
 import {deselectLayerAction, selectLayerAction} from "../../../app-redux/creative-editor/actionCreators";
-import {KonvaEventObject} from "konva/types/Node";
+import {layoutVariantList} from "./data";
+import {LayoutVariant, LayoutVariantSize} from "../../../models/LayoutVariant";
 
 export const BoardComponent = (props: BoardProps) => {
 
@@ -20,9 +21,11 @@ export const BoardComponent = (props: BoardProps) => {
     let canvasRef = useRef<Stage>(null);
     let layerRef = useRef<Konva.Layer>(null);
 
-    const [stageWidth, setStageWidth] = useState(800);
-    const [stageHeight, setStageHeight] = useState(800);
-    const [zoom, setZoom] = useState<number>(40);
+    const [layoutSizeLabelArray, setLayoutSizeLabelArray] = useState<LayoutVariant[]>(layoutVariantList)
+    const [selectedLayoutVariantArray, setSelectedLayoutVariantArray] = useState<LayoutVariantSize[]>(layoutVariantList[0].sizeList)
+    const [selectedLayoutVariant, setSelectedLayoutVariant] = useState<LayoutVariantSize>(selectedLayoutVariantArray[0]);
+
+    const [zoom, setZoom] = useState<number>(1);
     const [stageScale, setStageScale] = useState<number>(1);
     const [stageScaleX, setStageScaleX] = useState<number>(0);
     const [stageScaleY, setStageScaleY] = useState<number>(0);
@@ -47,34 +50,18 @@ export const BoardComponent = (props: BoardProps) => {
         // delete link;
     }
 
-    const zoomClick = (e: KonvaEventObject<WheelEvent>) => {
-        e.evt.preventDefault();
-        const scaleBy = 1.02;
-        const stage = e.target.getStage();
-        const oldScale = stage?.scaleX();
-        const mousePointTo = {
-            // @ts-ignore
-            x: stage?.getPointerPosition()?.x / oldScale - stage?.x() / oldScale,
-            // @ts-ignore
-            y: stage?.getPointerPosition()?.y / oldScale - stage?.y() / oldScale
-        };
-        // @ts-ignore
-        const newScale = e.evt.deltaY > 0 ? oldScale * scaleBy : oldScale / scaleBy;
-        setStageScale(newScale);
-        // @ts-ignore
-        setStageScaleX(-(mousePointTo.x - stage?.getPointerPosition()?.x / newScale) * newScale)
-        // @ts-ignore
-        setStageScaleY(-(mousePointTo.y - stage?.getPointerPosition()?.y / newScale) * newScale)
-    }
-
     return (
         <div className={classes.rootContainer}>
             <div className={classes.headerContainer}>
                 <FormControl className={classes.headerFormContainer}>
                     <InputLabel>Select type</InputLabel>
-                    <Select defaultValue={1}>
-                        <MenuItem value={1}>Facebook</MenuItem>
-                        <MenuItem value={2}>Instagram</MenuItem>
+                    <Select defaultValue={1} onChange={(event) => {
+                        const layoutVariant = layoutSizeLabelArray.find((data: LayoutVariant) => data.id === event.target.value)
+                        setSelectedLayoutVariantArray(layoutVariant ? layoutVariant.sizeList : []);
+                    }}>
+                        {layoutSizeLabelArray.map(data => {
+                            return (<MenuItem value={data.id}>{data.title}</MenuItem>)
+                        })}
                     </Select>
                 </FormControl>
 
@@ -83,17 +70,24 @@ export const BoardComponent = (props: BoardProps) => {
                     <Select defaultValue={1} onChange={(value) => {
                         const menuValue = Number(value.target.value)
                         setLayerMenuOption(menuValue);
-                        if (menuValue === 1) {
-                            setStageWidth(1080);
-                            setStageHeight(1200)
-                        } else {
-                            setStageWidth(400);
-                            setStageHeight(400);
+                        const selectedMenu = selectedLayoutVariantArray.find((data: LayoutVariantSize) => data.id === menuValue)
+                        if (selectedMenu) {
+                            setSelectedLayoutVariant(selectedMenu)
                         }
-                        // updateStageWidth()
+
+                        // if (menuValue === 1) {
+                        //     setStageWidth(1080);
+                        //     setStageHeight(1200)
+                        // } else {
+                        //     setStageWidth(400);
+                        //     setStageHeight(400);
+                        // }
                     }}>
-                        <MenuItem value={1}>1080 * 1200</MenuItem>
-                        <MenuItem value={2}>800 * 800</MenuItem>
+                        {
+                            selectedLayoutVariantArray.map(data => {
+                                return (<MenuItem value={data.id}>{data.title}</MenuItem>)
+                            })
+                        }
                     </Select>
                 </FormControl>
 
@@ -102,8 +96,8 @@ export const BoardComponent = (props: BoardProps) => {
                         color={"primary"}
                         variant={"contained"}
                         onClick={() => {
-                            if (zoom > 25) {
-                                const temp = zoom - 25
+                            if (zoom > 0.4) {
+                                const temp = zoom - 0.2
                                 setZoom(temp);
                             }
                         }}
@@ -113,8 +107,8 @@ export const BoardComponent = (props: BoardProps) => {
                         color={"primary"}
                         variant={"contained"}
                         onClick={() => {
-                            if (zoom <= 100) {
-                                const temp = zoom + 25;
+                            if (zoom < 1) {
+                                const temp = zoom + 0.2;
                                 setZoom(temp);
                             }
                         }}
@@ -122,17 +116,21 @@ export const BoardComponent = (props: BoardProps) => {
             </div>
             <div className={classes.bodyContainer}>
                 <div className={classes.contentContainer}
-                     style={dynamicStyleForBoard(layerMenuOption)}>
+                     style={{
+                         ...dynamicStyleForBoard(selectedLayoutVariant),
+                         ...getTransformedStyle(zoom, selectedLayoutVariant.width / 2, selectedLayoutVariant.height / 2)
+                     }}>
+
                     <Stage
                         // style={getZoomedLayout(zoom)}
                         ref={canvasRef}
-                        width={stageWidth}
-                        height={stageHeight}
+                        width={selectedLayoutVariant.width}
+                        height={selectedLayoutVariant.height}
                         scaleX={stageScale}
                         scaleY={stageScale}
                         x={stageScaleX}
                         y={stageScaleY}
-                        onWheel={zoomClick}
+                        // onWheel={zoomClick}
                         onMouseDown={event => {
                             const clickedOnEmpty = event.target === event.target.getStage()
                             if (clickedOnEmpty) {
@@ -185,6 +183,7 @@ export const BoardComponent = (props: BoardProps) => {
                             }
                         </Layer>
                     </Stage>
+
                 </div>
             </div>
             <div className={classes.footerContainer}>

@@ -10,10 +10,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d230885-27ed-464d-9994-fc243b195ae1" name="Default Changelist" comment="Editor container style corrections are made.&#10;Zoom options is in pending">
+    <list default="true" id="6d230885-27ed-464d-9994-fc243b195ae1" name="Default Changelist" comment="Zoom on swipe is completed.&#10;need to apply that functionality in inc/dec button">
+      <change afterPath="$PROJECT_DIR$/src/models/LayoutVariant.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/creative-editor/board/data.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/board/BoardComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/board/BoardComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/board/styles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/board/styles.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,9 +27,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
         <option value="CSS File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -41,7 +45,12 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -50,6 +59,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="ts.external.directory.path" value="E:\reactjs\motifin\node_modules\typescript\lib" />
   </component>
@@ -115,7 +125,9 @@
       <workItem from="1586413782208" duration="650000" />
       <workItem from="1586418248327" duration="124000" />
       <workItem from="1586418399780" duration="667000" />
-      <workItem from="1586502811069" duration="17377000" />
+      <workItem from="1586502811069" duration="18831000" />
+      <workItem from="1586588112860" duration="3384000" />
+      <workItem from="1586596305962" duration="9035000" />
     </task>
     <task id="LOCAL-00001" summary="Image and Text resizable task was completed">
       <created>1586514124225</created>
@@ -131,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586528584519</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Zoom on swipe is completed.&#10;need to apply that functionality in inc/dec button">
+      <created>1586532929861</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1586532929861</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,17 +166,31 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Image and Text resizable task was completed" />
     <MESSAGE value="Editor container style corrections are made.&#10;Zoom options is in pending" />
-    <option name="LAST_COMMIT_MESSAGE" value="Editor container style corrections are made.&#10;Zoom options is in pending" />
+    <MESSAGE value="Zoom on swipe is completed.&#10;need to apply that functionality in inc/dec button" />
+    <option name="LAST_COMMIT_MESSAGE" value="Zoom on swipe is completed.&#10;need to apply that functionality in inc/dec button" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="275" y="22" key="#Deployment" timestamp="1586596224449">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="22" key="#Deployment/0.0.1366.728@0.0.1366.728" timestamp="1586596224449" />
+    <state x="360" y="58" key="#Options" timestamp="1586596210930">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="360" y="58" key="#Options/0.0.1366.728@0.0.1366.728" timestamp="1586596210930" />
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586018978028">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1586018978028" />
+    <state x="430" y="219" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1586596233854">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="430" y="219" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1586596233854" />
     <state x="306" y="0" key="CommitChangelistDialog2" timestamp="1586418272699">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -166,22 +199,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1585204727898" />
-    <state width="1345" height="178" key="GridCell.Tab.0.bottom" timestamp="1586505389464">
+    <state width="1323" height="178" key="GridCell.Tab.0.bottom" timestamp="1586596956288">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586505389464" />
-    <state width="1345" height="178" key="GridCell.Tab.0.center" timestamp="1586505389464">
+    <state width="1323" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586596956288" />
+    <state width="1323" height="178" key="GridCell.Tab.0.center" timestamp="1586596956287">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586505389464" />
-    <state width="1345" height="178" key="GridCell.Tab.0.left" timestamp="1586505389463">
+    <state width="1323" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586596956287" />
+    <state width="1323" height="178" key="GridCell.Tab.0.left" timestamp="1586596956287">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586505389463" />
-    <state width="1345" height="178" key="GridCell.Tab.0.right" timestamp="1586505389464">
+    <state width="1323" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586596956287" />
+    <state width="1323" height="178" key="GridCell.Tab.0.right" timestamp="1586596956288">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586505389464" />
+    <state width="1323" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586596956288" />
     <state x="504" y="66" key="RollbackChangesDialog" timestamp="1586524807963">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -194,10 +227,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1586020101206" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1585031892519">
+    <state x="545" y="263" key="WebDeployment.AddServerDialog.v.1" timestamp="1586596183852">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1585031892519" />
+    <state x="545" y="263" key="WebDeployment.AddServerDialog.v.1/0.0.1366.728@0.0.1366.728" timestamp="1586596183852" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1586614307557">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1586614307557" />
     <state x="463" y="169" key="save.file.as.template.dialog" timestamp="1585836897811">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
