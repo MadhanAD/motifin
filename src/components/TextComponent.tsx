@@ -1,13 +1,11 @@
 import {Text, Transformer} from "react-konva";
 import Konva from "konva";
 import React, {Fragment, useRef} from "react";
+import {LayerTextOptions} from "../models/LayerModel";
 
 export interface TextProps {
     id?: string;
-    text?: string;
-    x?: number;
-    y?: number;
-    isSelected?: boolean;
+    data: LayerTextOptions;
 }
 
 const TextComponent = (props: TextProps) => {
@@ -15,12 +13,12 @@ const TextComponent = (props: TextProps) => {
     return (
         <Fragment key={props.id}>
             <Text
-                x={props.x}
-                y={props.y}
+                x={props.data.x}
+                y={props.data.y}
                 ref={textRef}
                 key={props.id}
                 id={props.id}
-                text={props.text}
+                text={props.data.text}
                 draggable={true}
                 onDragEnd={e => {
 
@@ -30,9 +28,9 @@ const TextComponent = (props: TextProps) => {
                 }}
             />
             {
-                props.isSelected && (
+                props.data.isSelected && (
                     <Transformer ref={(node) => {
-                        if (props.isSelected) {
+                        if (props.data.isSelected) {
                             node?.setNode(textRef.current);
                             node?.getLayer()?.batchDraw();
                         }

@@ -3,10 +3,10 @@ import {dynamicStyleForBoard, getTransformedStyle, useStyles} from "./styles";
 import {BoardProps} from "../Props";
 import {useDispatch, useSelector} from "react-redux";
 import {AppState} from "../../../app-redux/AppState";
-import {LayerAction, LayerModel, LayerType} from "../../../models/LayerModel";
+import {LayerAction, LayerImageOptions, LayerModel, LayerTextOptions, LayerType} from "../../../models/LayerModel";
 import {Button, FormControl, InputLabel, MenuItem, Select} from "@material-ui/core";
 import {Layer, Stage} from "react-konva";
-import demo1Img from "../../../assets/demo1.jpg";
+
 import TextComponent from "../../../components/TextComponent";
 import Konva from "konva";
 import ImageComponent, {ImageProps} from "../../../components/ImageComponent";
@@ -22,7 +22,7 @@ export const BoardComponent = (props: BoardProps) => {
     let layerRef = useRef<Konva.Layer>(null);
 
     const [layoutSizeLabelArray, setLayoutSizeLabelArray] = useState<LayoutVariant[]>(layoutVariantList)
-    const [selectedLayoutVariantArray, setSelectedLayoutVariantArray] = useState<LayoutVariantSize[]>(layoutVariantList[0].sizeList)
+    const [selectedLayoutVariantArray, setSelectedLayoutVariantArray] = useState<LayoutVariantSize[]>(layoutSizeLabelArray[0].sizeList)
     const [selectedLayoutVariant, setSelectedLayoutVariant] = useState<LayoutVariantSize>(selectedLayoutVariantArray[0]);
 
     const [zoom, setZoom] = useState<number>(1);
@@ -33,7 +33,6 @@ export const BoardComponent = (props: BoardProps) => {
     const classes = useStyles();
     const [layerMenuOption, setLayerMenuOption] = useState(1);
     const {layerModelArray} = useSelector<AppState, BoardProps>(state => {
-
         const boardProps: BoardProps = {
             layerModelArray: state.board.layerItemArray
         };
@@ -74,14 +73,6 @@ export const BoardComponent = (props: BoardProps) => {
                         if (selectedMenu) {
                             setSelectedLayoutVariant(selectedMenu)
                         }
-
-                        // if (menuValue === 1) {
-                        //     setStageWidth(1080);
-                        //     setStageHeight(1200)
-                        // } else {
-                        //     setStageWidth(400);
-                        //     setStageHeight(400);
-                        // }
                     }}>
                         {
                             selectedLayoutVariantArray.map(data => {
@@ -121,23 +112,20 @@ export const BoardComponent = (props: BoardProps) => {
                          ...getTransformedStyle(zoom, selectedLayoutVariant.width / 2, selectedLayoutVariant.height / 2)
                      }}>
 
-                    <Stage
-                        // style={getZoomedLayout(zoom)}
-                        ref={canvasRef}
-                        width={selectedLayoutVariant.width}
-                        height={selectedLayoutVariant.height}
-                        scaleX={stageScale}
-                        scaleY={stageScale}
-                        x={stageScaleX}
-                        y={stageScaleY}
-                        // onWheel={zoomClick}
-                        onMouseDown={event => {
-                            const clickedOnEmpty = event.target === event.target.getStage()
-                            if (clickedOnEmpty) {
-                                // deselect all element
-                                dispatch(deselectLayerAction());
-                            }
-                        }}
+                    <Stage ref={canvasRef}
+                           width={selectedLayoutVariant.width}
+                           height={selectedLayoutVariant.height}
+                           scaleX={stageScale}
+                           scaleY={stageScale}
+                           x={stageScaleX}
+                           y={stageScaleY}
+                           onMouseDown={event => {
+                               const clickedOnEmpty = event.target === event.target.getStage()
+                               if (clickedOnEmpty) {
+                                   // deselect all element
+                                   dispatch(deselectLayerAction());
+                               }
+                           }}
                     >
                         <Layer
                             className={classes.layerStyle}
@@ -153,9 +141,7 @@ export const BoardComponent = (props: BoardProps) => {
                                         return (
                                             <ImageComponent
                                                 key={data.id}
-                                                shape={{x: 50, y: 50}}
-                                                imagePath={demo1Img}
-                                                isSelected={data.isSelected}
+                                                data={data.layerOptions as LayerImageOptions}
                                                 onSelect={(data: ImageProps) => {
                                                     // calls only on select
                                                     const layerModel: LayerModel = {
@@ -171,11 +157,8 @@ export const BoardComponent = (props: BoardProps) => {
                                     } else if (data.type === LayerType.TEXT) {
                                         return (
                                             <TextComponent
-                                                x={50}
-                                                y={50}
+                                                data={data.layerOptions as LayerTextOptions}
                                                 id={data.id}
-                                                text={"Text from board props"}
-                                                isSelected={data.isSelected}
                                             />
                                         )
                                     }

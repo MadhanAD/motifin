@@ -1,32 +1,24 @@
 import React, {useRef, Fragment} from "react";
 import {Image, Transformer} from "react-konva";
+import {LayerImageOptions} from "../models/LayerModel";
 
 export interface ImageProps {
     id?: string;
-    shape?: ImageShape;
-    imagePath: string;
-    isSelected?: boolean;
+    data?: LayerImageOptions;
     onSelect?: (props: ImageProps) => void;
-    onChange?: (props: ImageShape) => void;
-}
-
-export interface ImageShape {
-    x?: number;
-    y?: number;
-    width?: number;
-    height?: number;
+    onChange?: (props: LayerImageOptions) => void;
 }
 
 const ImageComponent = (props: ImageProps) => {
     // @ts-ignore
     let imageRef = useRef<Image>(new window.Image());
     const imageSrc = new window.Image();
-    imageSrc.src = props.imagePath;
+    imageSrc.src = props.data?.imageUrl || "";
     return (
         <Fragment key={props.id}>
             <Image ref={imageRef}
-                   x={props?.shape?.x}
-                   y={props?.shape?.y}
+                   x={props?.data?.x}
+                   y={props?.data?.y}
                    image={imageSrc}
                    draggable={true}
                    onDragEnd={e => {
@@ -45,9 +37,9 @@ const ImageComponent = (props: ImageProps) => {
                    }}
             />
             {
-                props.isSelected && (
+                props?.data?.isSelected && (
                     <Transformer ref={(node) => {
-                        if (props.isSelected) {
+                        if (props?.data?.isSelected) {
                             node?.setNode(imageRef.current);
                             node?.getLayer()?.batchDraw();
                         }

@@ -14,16 +14,15 @@ export const boardReducer: Reducer<BoardState, ActionType<LayerModel>> = (previo
         case Actions.ADD_LAYER:
             let tempState = {...previousState};
             const array = [...tempState.layerItemArray];
-            // array.splice(0, 0, action.data);
             const tempAddArray = array.map((data: LayerModel) => {
                 data.isSelected = false;
+                if (data.layerOptions) data.layerOptions.isSelected = false;
                 return data;
             });
             const tempData = action.data;
             tempData.isSelected = true;
+            if (tempData.layerOptions) tempData.layerOptions.isSelected = true;
             tempAddArray.push(tempData);
-            // array.push(action.data);
-            console.log("reducer add ", tempAddArray);
             return {
                 layerItemArray: tempAddArray
             };
@@ -32,9 +31,9 @@ export const boardReducer: Reducer<BoardState, ActionType<LayerModel>> = (previo
             const tempArray = tempRemoveState.layerItemArray.filter((data, index) => index !== action.data.removeIndex);
             const selectionLayerArray = tempArray.map((data: LayerModel) => {
                 data.isSelected = false;
+                if (data.layerOptions) data.layerOptions.isSelected = false;
                 return data;
             });
-            console.log("reducer remove ", selectionLayerArray);
             return {
                 layerItemArray: selectionLayerArray
             };
@@ -42,8 +41,10 @@ export const boardReducer: Reducer<BoardState, ActionType<LayerModel>> = (previo
             const tempSelectState = {...previousState};
             const tempSelectedArray = tempSelectState.layerItemArray.map((data: LayerModel) => {
                 data.isSelected = data.id === action.data.id;
+                if (data.layerOptions) data.layerOptions.isSelected = data.isSelected;
                 return data
             });
+            console.table(tempSelectedArray);
             return {
                 layerItemArray: tempSelectedArray
             };
@@ -51,6 +52,7 @@ export const boardReducer: Reducer<BoardState, ActionType<LayerModel>> = (previo
             const tempDeSelectState = {...previousState};
             const tempDeselectedArray = tempDeSelectState.layerItemArray.map((data: LayerModel) => {
                 data.isSelected = false;
+                if (data.layerOptions) data.layerOptions.isSelected = false
                 return data
             });
             return {

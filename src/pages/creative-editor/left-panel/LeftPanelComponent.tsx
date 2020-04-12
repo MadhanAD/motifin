@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import {useStyles} from "./styles";
 import {Button, FormControl, InputLabel, List, ListItem, ListItemText, MenuItem, Select} from "@material-ui/core";
 import HighlightOffIcon from "@material-ui/icons/HighlightOff"
+import demo1Img from "../../../assets/demo1.jpg";
 
 import {LayerAction, LayerModel, LayerType} from "../../../models/LayerModel";
 import {LeftPanelProps} from "../Props";
@@ -35,7 +36,6 @@ export const LeftPanelComponent = (props: LeftPanelProps) => {
                         } else {
                             setLayerType(LayerType.NONE);
                         }
-                        console.log("layer selection ", layerType);
                     }}>
                         <MenuItem value={LayerType.IMAGE}>Image</MenuItem>
                         <MenuItem value={LayerType.TEXT}>Text</MenuItem>
@@ -49,20 +49,28 @@ export const LeftPanelComponent = (props: LeftPanelProps) => {
                                 layerModel.id = Uuid.v4();
                                 layerModel.layerText = "Image Layer";
                                 layerModel.addIndex = tempLayerArray.length + 1;
-                                // tempLayerArray.splice(0,0,layerModel);
+                                layerModel.layerOptions = {
+                                    x: 50,
+                                    y: 50,
+                                    imageUrl: demo1Img
+                                };
                                 tempLayerArray.push(layerModel);
                             } else if (layerType === LayerType.TEXT) {
                                 layerModel.id = Uuid.v4();
                                 layerModel.layerText = "Text Layer";
                                 layerModel.addIndex = tempLayerArray.length + 1;
-                                // tempLayerArray.splice(0,0,layerModel);
+                                layerModel.layerOptions = {
+                                    x: 50,
+                                    y: 75,
+                                    fontColor: "#000",
+                                    fontSize: 15,
+                                    text: "Replace this Text"
+                                };
                                 tempLayerArray.push(layerModel);
                             }
                             setLayerArray(tempLayerArray);
                             const layerModelAction = addLayerAction(layerModel);
-                            console.log("add called");
                             dispatch(layerModelAction);
-                            // props.layerModelCallback(layerModel)
                         }}>Add</Button>
             </div>
             <div className={classes.listContainer}>
@@ -72,8 +80,7 @@ export const LeftPanelComponent = (props: LeftPanelProps) => {
                                 return (<ListItem className={classes.listItemContainer} key={`${index}`}
                                                   onClick={() => {
                                                       dispatch(selectLayerAction(data))
-                                                  }}
-                                >
+                                                  }}>
                                     <ListItemText primary={data.layerText}/>
                                     <HighlightOffIcon onClick={() => {
                                         const tempArray = layerArray.filter((data, position) => position !== index);
@@ -89,7 +96,6 @@ export const LeftPanelComponent = (props: LeftPanelProps) => {
                     }
                 </List>
             </div>
-
         </div>
     )
 };
