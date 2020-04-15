@@ -1,5 +1,5 @@
 import {makeStyles} from "@material-ui/core/styles";
-import {LayoutVariantSize} from "../../../models/LayoutVariant";
+import {LayoutVariantSize} from "../../../models/layout-variant.model";
 
 export const useStyles = makeStyles({
     rootContainer: {

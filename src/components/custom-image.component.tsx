@@ -1,6 +1,6 @@
 import React, {useRef, Fragment} from "react";
 import {Image, Transformer} from "react-konva";
-import {LayerImageOptions} from "../models/LayerModel";
+import {LayerImageOptions} from "../models/layer.model";
 
 export interface ImageProps {
     id?: string;
@@ -9,7 +9,7 @@ export interface ImageProps {
     onChange?: (props: LayerImageOptions) => void;
 }
 
-const ImageComponent = (props: ImageProps) => {
+const CustomImageComponent = (props: ImageProps) => {
     // @ts-ignore
     let imageRef = useRef<Image>(new window.Image());
     const imageSrc = new window.Image();
@@ -56,4 +56,4 @@ const ImageComponent = (props: ImageProps) => {
     )
 };
 
-export default ImageComponent;
+export default CustomImageComponent;

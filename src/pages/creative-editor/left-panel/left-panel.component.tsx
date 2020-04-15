@@ -4,20 +4,20 @@ import {Button, FormControl, InputLabel, List, ListItem, ListItemText, MenuItem,
 import HighlightOffIcon from "@material-ui/icons/HighlightOff"
 import demo1Img from "../../../assets/demo1.jpg";
 
-import {LayerAction, LayerModel, LayerType} from "../../../models/LayerModel";
-import {LeftPanelProps} from "../Props";
-import {useDispatch} from "react-redux";
-import {addLayerAction, removeLayerAction, selectLayerAction} from "../../../app-redux/creative-editor/actionCreators";
-
+import {LayerAction, LayerModel, LayerType} from "../../../models/layer.model";
 const Uuid = require("uuid");
+
+
+export interface LeftPanelProps {
+    layerModelCallback: (arg: LayerModel) => void;
+    layerModelArray: LayerModel[]
+}
+
 
 export const LeftPanelComponent = (props: LeftPanelProps) => {
 
     const [layerType, setLayerType] = useState<LayerType>(LayerType.IMAGE);
-    const [layerArray, setLayerArray] = useState<LayerModel[]>([]);
     const classes = useStyles();
-
-    const dispatch = useDispatch();
 
     return (
         <div className={classes.rootContainer}>
@@ -44,21 +44,19 @@ export const LeftPanelComponent = (props: LeftPanelProps) => {
                 <Button color={"primary"} variant={"contained"}
                         onClick={() => {
                             const layerModel: LayerModel = {type: layerType, action: LayerAction.ADD};
-                            const tempLayerArray = [...layerArray];
                             if (layerType === LayerType.IMAGE) {
                                 layerModel.id = Uuid.v4();
                                 layerModel.layerText = "Image Layer";
-                                layerModel.addIndex = tempLayerArray.length + 1;
+                                layerModel.addIndex = props.layerModelArray.length + 1;
                                 layerModel.layerOptions = {
                                     x: 50,
                                     y: 50,
                                     imageUrl: demo1Img
                                 };
-                                tempLayerArray.push(layerModel);
                             } else if (layerType === LayerType.TEXT) {
                                 layerModel.id = Uuid.v4();
                                 layerModel.layerText = "Text Layer";
-                                layerModel.addIndex = tempLayerArray.length + 1;
+                                layerModel.addIndex = props.layerModelArray.length + 1;
                                 layerModel.layerOptions = {
                                     x: 50,
                                     y: 75,
@@ -66,29 +64,24 @@ export const LeftPanelComponent = (props: LeftPanelProps) => {
                                     fontSize: 15,
                                     text: "Replace this Text"
                                 };
-                                tempLayerArray.push(layerModel);
                             }
-                            setLayerArray(tempLayerArray);
-                            const layerModelAction = addLayerAction(layerModel);
-                            dispatch(layerModelAction);
+                            props.layerModelCallback(layerModel)
                         }}>Add</Button>
             </div>
             <div className={classes.listContainer}>
                 <List className={classes.listContentContainer}>
                     {
-                        layerArray.map((data, index) => {
+                        props.layerModelArray.map((data, index) => {
                                 return (<ListItem className={classes.listItemContainer} key={`${index}`}
                                                   onClick={() => {
-                                                      dispatch(selectLayerAction(data))
+                                                      data.action = LayerAction.SELECT
+                                                      props.layerModelCallback(data)
                                                   }}>
                                     <ListItemText primary={data.layerText}/>
                                     <HighlightOffIcon onClick={() => {
-                                        const tempArray = layerArray.filter((data, position) => position !== index);
-                                        setLayerArray(tempArray);
                                         const layerModel: LayerModel = {type: layerType, action: LayerAction.REMOVE};
                                         layerModel.removeIndex = index;
-                                        const layerModelAction = removeLayerAction(layerModel);
-                                        dispatch(layerModelAction);
+                                        props.layerModelCallback(layerModel)
                                     }}/>
                                 </ListItem>)
                             }

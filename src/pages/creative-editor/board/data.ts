@@ -1,6 +1,6 @@
-import {LayoutVariant} from "../../../models/LayoutVariant";
+import {LayoutVariantModel} from "../../../models/layout-variant.model";
 
-export const layoutVariantList: LayoutVariant[] = [
+export const layoutVariantList: LayoutVariantModel[] = [
     {
         id: 1,
         title: "Facebook",

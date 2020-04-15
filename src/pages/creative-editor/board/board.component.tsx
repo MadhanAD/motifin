@@ -1,28 +1,28 @@
 import React, {useRef, useState} from "react";
 import {dynamicStyleForBoard, getTransformedStyle, useStyles} from "./styles";
-import {BoardProps} from "../Props";
-import {useDispatch, useSelector} from "react-redux";
-import {AppState} from "../../../app-redux/AppState";
-import {LayerAction, LayerImageOptions, LayerModel, LayerTextOptions, LayerType} from "../../../models/LayerModel";
+import {LayerAction, LayerImageOptions, LayerModel, LayerTextOptions, LayerType} from "../../../models/layer.model";
 import {Button, FormControl, InputLabel, MenuItem, Select} from "@material-ui/core";
 import {Layer, Stage} from "react-konva";
 
-import TextComponent from "../../../components/TextComponent";
+import CustomTextComponent from "../../../components/custom-text.component";
 import Konva from "konva";
-import ImageComponent, {ImageProps} from "../../../components/ImageComponent";
-import {deselectLayerAction, selectLayerAction} from "../../../app-redux/creative-editor/actionCreators";
-import {layoutVariantList} from "./data";
-import {LayoutVariant, LayoutVariantSize} from "../../../models/LayoutVariant";
+import CustomImageComponent, {ImageProps} from "../../../components/custom-image.component";
+import {LayoutVariantModel, LayoutVariantSize} from "../../../models/layout-variant.model";
+
+export interface BoardProps {
+    layerModelArray: LayerModel[];
+    layoutVariantArray: LayoutVariantModel[];
+    onSelectLayer: (arg: LayerModel) => void;
+    onDeselectLayer: () => void;
+}
+
 
 export const BoardComponent = (props: BoardProps) => {
-
-    const dispatch = useDispatch();
 
     let canvasRef = useRef<Stage>(null);
     let layerRef = useRef<Konva.Layer>(null);
 
-    const [layoutSizeLabelArray, setLayoutSizeLabelArray] = useState<LayoutVariant[]>(layoutVariantList)
-    const [selectedLayoutVariantArray, setSelectedLayoutVariantArray] = useState<LayoutVariantSize[]>(layoutSizeLabelArray[0].sizeList)
+    const [selectedLayoutVariantArray, setSelectedLayoutVariantArray] = useState<LayoutVariantSize[]>(props.layoutVariantArray[0].sizeList)
     const [selectedLayoutVariant, setSelectedLayoutVariant] = useState<LayoutVariantSize>(selectedLayoutVariantArray[0]);
 
     const [zoom, setZoom] = useState<number>(1);
@@ -31,13 +31,6 @@ export const BoardComponent = (props: BoardProps) => {
     const [stageScaleY, setStageScaleY] = useState<number>(0);
 
     const classes = useStyles();
-    const [layerMenuOption, setLayerMenuOption] = useState(1);
-    const {layerModelArray} = useSelector<AppState, BoardProps>(state => {
-        const boardProps: BoardProps = {
-            layerModelArray: state.board.layerItemArray
-        };
-        return boardProps;
-    });
 
     function downloadURI(uri: any, name: any) {
         let link = document.createElement('a');
@@ -55,10 +48,10 @@ export const BoardComponent = (props: BoardProps) => {
                 <FormControl className={classes.headerFormContainer}>
                     <InputLabel>Select type</InputLabel>
                     <Select defaultValue={1} onChange={(event) => {
-                        const layoutVariant = layoutSizeLabelArray.find((data: LayoutVariant) => data.id === event.target.value)
+                        const layoutVariant = props.layoutVariantArray.find((data: LayoutVariantModel) => data.id === event.target.value)
                         setSelectedLayoutVariantArray(layoutVariant ? layoutVariant.sizeList : []);
                     }}>
-                        {layoutSizeLabelArray.map(data => {
+                        {props.layoutVariantArray.map(data => {
                             return (<MenuItem value={data.id}>{data.title}</MenuItem>)
                         })}
                     </Select>
@@ -68,7 +61,6 @@ export const BoardComponent = (props: BoardProps) => {
                     <InputLabel>Select layout</InputLabel>
                     <Select defaultValue={1} onChange={(value) => {
                         const menuValue = Number(value.target.value)
-                        setLayerMenuOption(menuValue);
                         const selectedMenu = selectedLayoutVariantArray.find((data: LayoutVariantSize) => data.id === menuValue)
                         if (selectedMenu) {
                             setSelectedLayoutVariant(selectedMenu)
@@ -123,7 +115,7 @@ export const BoardComponent = (props: BoardProps) => {
                                const clickedOnEmpty = event.target === event.target.getStage()
                                if (clickedOnEmpty) {
                                    // deselect all element
-                                   dispatch(deselectLayerAction());
+                                   props.onDeselectLayer()
                                }
                            }}
                     >
@@ -136,10 +128,10 @@ export const BoardComponent = (props: BoardProps) => {
                             height={400}
                         >
                             {
-                                layerModelArray?.map((data: LayerModel) => {
+                                props.layerModelArray?.map((data: LayerModel) => {
                                     if (data.type === LayerType.IMAGE) {
                                         return (
-                                            <ImageComponent
+                                            <CustomImageComponent
                                                 key={data.id}
                                                 data={data.layerOptions as LayerImageOptions}
                                                 onSelect={(data: ImageProps) => {
@@ -149,14 +141,14 @@ export const BoardComponent = (props: BoardProps) => {
                                                         action: LayerAction.SELECT,
                                                         type: LayerType.IMAGE
                                                     };
-                                                    dispatch(selectLayerAction(layerModel))
+                                                    props.onSelectLayer(layerModel)
                                                 }}
                                                 onChange={(data) => {
                                                 }}/>
                                         )
                                     } else if (data.type === LayerType.TEXT) {
                                         return (
-                                            <TextComponent
+                                            <CustomTextComponent
                                                 data={data.layerOptions as LayerTextOptions}
                                                 id={data.id}
                                             />

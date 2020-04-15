@@ -1,5 +1,5 @@
-import {boardReducer} from "./creative-editor/reducer"
+import {editorReducer} from "./creative-editor/reducer"
 
 export {
-    boardReducer
+    editorReducer
 }

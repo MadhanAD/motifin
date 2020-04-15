@@ -1,14 +1,14 @@
 import {Text, Transformer} from "react-konva";
 import Konva from "konva";
 import React, {Fragment, useRef} from "react";
-import {LayerTextOptions} from "../models/LayerModel";
+import {LayerTextOptions} from "../models/layer.model";
 
 export interface TextProps {
     id?: string;
     data: LayerTextOptions;
 }
 
-const TextComponent = (props: TextProps) => {
+const CustomTextComponent = (props: TextProps) => {
     const textRef = useRef<Konva.Text>(null);
     return (
         <Fragment key={props.id}>
@@ -41,4 +41,4 @@ const TextComponent = (props: TextProps) => {
     )
 };
 
-export default TextComponent
+export default CustomTextComponent

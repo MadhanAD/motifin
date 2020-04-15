@@ -1,4 +1,4 @@
-import {LayerModel} from "../../models/LayerModel";
+import {LayerModel} from "../../models/layer.model";
 
 export const Actions = {
     ADD_LAYER: "add_layer",

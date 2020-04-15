@@ -1,3 +1,3 @@
 export interface AppState {
-    board: any;
+    editor: any;
 }

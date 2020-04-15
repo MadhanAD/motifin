@@ -10,15 +10,34 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d230885-27ed-464d-9994-fc243b195ae1" name="Default Changelist" comment="Layout menu was loaded from Array.&#10;Transform was added in every variant as a value of 0.4&#10;Zoom options is in progress.">
+    <list default="true" id="6d230885-27ed-464d-9994-fc243b195ae1" name="Default Changelist" comment="Layer Options are saved in save with redux.">
+      <change afterPath="$PROJECT_DIR$/src/components/TextOptions/styles.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/TextOptions/text-options.component.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app-redux/AppState.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app-redux/AppState.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app-redux/appReducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app-redux/appReducers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app-redux/creative-editor/actionCreators.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app-redux/creative-editor/actionCreators.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app-redux/creative-editor/models/ActionType.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app-redux/utils/ActionType.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app-redux/creative-editor/models/BoardState.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app-redux/creative-editor/state/EditorState.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app-redux/creative-editor/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app-redux/creative-editor/reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ImageComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ImageComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TextComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TextComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/LayerModel.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/LayerModel.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/board/BoardComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/board/BoardComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/board/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/left-panel/LeftPanelComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/left-panel/LeftPanelComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app-redux/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app-redux/reducers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ImageComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/custom-image.component.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/RouterComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app-nav.router.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TextComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/custom-text.component.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/LayerModel.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/layer.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/LayoutVariant.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/layout-variant.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/CreativeEditorPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/creative-editor.page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/Props.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/board/BoardComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/board/board.component.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/board/data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/board/data.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/board/styles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/board/styles.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/left-panel/LeftPanelComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/left-panel/left-panel.component.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/right-panel/RightPanelComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/right-panel/right-panel.component.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/right-panel/styles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/right-panel/styles.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/home.page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +47,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="CSS File" />
+        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
       </list>
     </option>
@@ -65,15 +84,15 @@
     <property name="ts.external.directory.path" value="E:\reactjs\motifin\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\reactjs\motifin\src\assets" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\reactjs\motifin\src\app-redux\utils" />
+      <recent name="E:\reactjs\motifin\src\app-redux" />
       <recent name="E:\reactjs\motifin\src\models" />
       <recent name="E:\reactjs\motifin\src\pages\creative-editor" />
       <recent name="E:\reactjs\motifin\src\components" />
-      <recent name="E:\reactjs\motifin\src\pages\creative-editor\right-panel" />
-      <recent name="E:\reactjs\motifin\src\pages\creative-editor\left-panel" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\reactjs\motifin\src\assets" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -129,7 +148,10 @@
       <workItem from="1586502811069" duration="18831000" />
       <workItem from="1586588112860" duration="3384000" />
       <workItem from="1586596305962" duration="10663000" />
-      <workItem from="1586669326859" duration="5425000" />
+      <workItem from="1586669326859" duration="10970000" />
+      <workItem from="1586758185358" duration="2146000" />
+      <workItem from="1586861636761" duration="598000" />
+      <workItem from="1586948302786" duration="6022000" />
     </task>
     <task id="LOCAL-00001" summary="Image and Text resizable task was completed">
       <created>1586514124225</created>
@@ -159,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586617037165</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Layer Options are saved in save with redux.">
+      <created>1586688570959</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1586688570959</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,7 +211,8 @@
     <MESSAGE value="Editor container style corrections are made.&#10;Zoom options is in pending" />
     <MESSAGE value="Zoom on swipe is completed.&#10;need to apply that functionality in inc/dec button" />
     <MESSAGE value="Layout menu was loaded from Array.&#10;Transform was added in every variant as a value of 0.4&#10;Zoom options is in progress." />
-    <option name="LAST_COMMIT_MESSAGE" value="Layout menu was loaded from Array.&#10;Transform was added in every variant as a value of 0.4&#10;Zoom options is in progress." />
+    <MESSAGE value="Layer Options are saved in save with redux." />
+    <option name="LAST_COMMIT_MESSAGE" value="Layer Options are saved in save with redux." />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="22" key="#Deployment" timestamp="1586596224449">
@@ -209,70 +239,70 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1585204727898" />
-    <state width="1323" height="178" key="GridCell.Tab.0.bottom" timestamp="1586687876307">
+    <state width="1323" height="178" key="GridCell.Tab.0.bottom" timestamp="1586948327342">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586687876307" />
-    <state width="1323" height="178" key="GridCell.Tab.0.center" timestamp="1586687876306">
+    <state width="1323" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586948327342" />
+    <state width="1323" height="178" key="GridCell.Tab.0.center" timestamp="1586948327342">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586687876306" />
-    <state width="1323" height="178" key="GridCell.Tab.0.left" timestamp="1586687876306">
+    <state width="1323" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586948327342" />
+    <state width="1323" height="178" key="GridCell.Tab.0.left" timestamp="1586948327342">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586687876306" />
-    <state width="1323" height="178" key="GridCell.Tab.0.right" timestamp="1586687876306">
+    <state width="1323" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586948327342" />
+    <state width="1323" height="178" key="GridCell.Tab.0.right" timestamp="1586948327342">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586687876306" />
-    <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1586687617921">
+    <state width="1323" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586948327342" />
+    <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1586709618512">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586687617921" />
-    <state width="1323" height="223" key="GridCell.Tab.1.center" timestamp="1586687617921">
+    <state width="1323" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586709618512" />
+    <state width="1323" height="223" key="GridCell.Tab.1.center" timestamp="1586709618511">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1586687617921" />
-    <state width="1323" height="223" key="GridCell.Tab.1.left" timestamp="1586687617921">
+    <state width="1323" height="223" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1586709618511" />
+    <state width="1323" height="223" key="GridCell.Tab.1.left" timestamp="1586709618511">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1586687617921" />
-    <state width="1323" height="223" key="GridCell.Tab.1.right" timestamp="1586687617921">
+    <state width="1323" height="223" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1586709618511" />
+    <state width="1323" height="223" key="GridCell.Tab.1.right" timestamp="1586709618512">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1586687617921" />
-    <state width="1323" height="223" key="GridCell.Tab.2.bottom" timestamp="1586687617922">
+    <state width="1323" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1586709618512" />
+    <state width="1323" height="223" key="GridCell.Tab.2.bottom" timestamp="1586709618512">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586687617922" />
-    <state width="1323" height="223" key="GridCell.Tab.2.center" timestamp="1586687617921">
+    <state width="1323" height="223" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586709618512" />
+    <state width="1323" height="223" key="GridCell.Tab.2.center" timestamp="1586709618512">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1586687617921" />
-    <state width="1323" height="223" key="GridCell.Tab.2.left" timestamp="1586687617921">
+    <state width="1323" height="223" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1586709618512" />
+    <state width="1323" height="223" key="GridCell.Tab.2.left" timestamp="1586709618512">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1586687617921" />
-    <state width="1323" height="223" key="GridCell.Tab.2.right" timestamp="1586687617921">
+    <state width="1323" height="223" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1586709618512" />
+    <state width="1323" height="223" key="GridCell.Tab.2.right" timestamp="1586709618512">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1586687617921" />
-    <state width="1323" height="223" key="GridCell.Tab.3.bottom" timestamp="1586687617922">
+    <state width="1323" height="223" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1586709618512" />
+    <state width="1323" height="223" key="GridCell.Tab.3.bottom" timestamp="1586709618512">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.3.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586687617922" />
-    <state width="1323" height="223" key="GridCell.Tab.3.center" timestamp="1586687617922">
+    <state width="1323" height="223" key="GridCell.Tab.3.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586709618512" />
+    <state width="1323" height="223" key="GridCell.Tab.3.center" timestamp="1586709618512">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.3.center/0.0.1366.728@0.0.1366.728" timestamp="1586687617922" />
-    <state width="1323" height="223" key="GridCell.Tab.3.left" timestamp="1586687617922">
+    <state width="1323" height="223" key="GridCell.Tab.3.center/0.0.1366.728@0.0.1366.728" timestamp="1586709618512" />
+    <state width="1323" height="223" key="GridCell.Tab.3.left" timestamp="1586709618512">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.3.left/0.0.1366.728@0.0.1366.728" timestamp="1586687617922" />
-    <state width="1323" height="223" key="GridCell.Tab.3.right" timestamp="1586687617922">
+    <state width="1323" height="223" key="GridCell.Tab.3.left/0.0.1366.728@0.0.1366.728" timestamp="1586709618512" />
+    <state width="1323" height="223" key="GridCell.Tab.3.right" timestamp="1586709618512">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.3.right/0.0.1366.728@0.0.1366.728" timestamp="1586687617922" />
+    <state width="1323" height="223" key="GridCell.Tab.3.right/0.0.1366.728@0.0.1366.728" timestamp="1586709618512" />
     <state x="504" y="66" key="RollbackChangesDialog" timestamp="1586524807963">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -297,9 +327,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="169" key="save.file.as.template.dialog/0.0.1366.728@0.0.1366.728" timestamp="1585836897811" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1586192103924">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1586950636970">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1586192103924" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1586950636970" />
   </component>
 </project>

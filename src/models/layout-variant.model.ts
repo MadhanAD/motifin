@@ -1,4 +1,4 @@
-export interface LayoutVariant {
+export interface LayoutVariantModel {
     id: number
     title: string;
     sizeList: LayoutVariantSize[];

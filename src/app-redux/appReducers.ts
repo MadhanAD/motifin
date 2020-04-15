@@ -1,7 +1,7 @@
 import {combineReducers} from "redux";
-import {boardReducer} from "./reducers"
+import {editorReducer} from "./reducers"
 
 const appReducers = combineReducers({
-    board: boardReducer
+    editor: editorReducer
 });
 export default appReducers;
