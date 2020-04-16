@@ -13,7 +13,7 @@ const CustomImageComponent = (props: ImageProps) => {
     // @ts-ignore
     let imageRef = useRef<Image>(new window.Image());
     const imageSrc = new window.Image();
-    imageSrc.src = props.data?.imageUrl || "";
+    imageSrc.src = props.data?.imageUrl || ""
     return (
         <Fragment key={props.id}>
             <Image ref={imageRef}

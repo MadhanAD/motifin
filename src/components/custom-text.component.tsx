@@ -19,6 +19,8 @@ const CustomTextComponent = (props: TextProps) => {
                 key={props.id}
                 id={props.id}
                 text={props.data.text}
+                fontSize={props.data.fontSize}
+                fill={props.data.fontColor}
                 draggable={true}
                 onDragEnd={e => {
 

@@ -4,7 +4,8 @@ export const Actions = {
     ADD_LAYER: "add_layer",
     REMOVE_LAYER: "remove_layer",
     SELECT_LAYER: "select_layer",
-    DESELECT_ALL: "deselect_layer"
+    DESELECT_ALL: "deselect_layer",
+    UPDATE_LAYER: "update_layer"
 };
 
 export const addLayerAction = (data: LayerModel) => {
@@ -33,3 +34,10 @@ export const deselectLayerAction = () => {
         type: Actions.DESELECT_ALL
     }
 };
+
+export const updateLayerAction = (data: LayerModel) => {
+    return {
+        type: Actions.UPDATE_LAYER,
+        data
+    }
+}

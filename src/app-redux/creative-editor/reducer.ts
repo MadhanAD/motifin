@@ -63,6 +63,18 @@ export const editorReducer: (previousState: EditorState, action: ActionType<Laye
                 layerModelArray: tempDeselectedArray,
                 selectedLayerModel: null
             };
+        case Actions.UPDATE_LAYER:
+
+            const layerModel = action.data
+            const tempState1 = {...previousState}
+            const tempArray1 = tempState1.layerModelArray.map((data: LayerModel) => {
+                return data.id === layerModel.id ? layerModel : data
+            })
+
+            return {
+                layerModelArray: tempArray1,
+                selectedLayerModel: layerModel
+            }
         default:
             return previousState
     }

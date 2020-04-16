@@ -11,7 +11,7 @@ import {
     addLayerAction,
     deselectLayerAction,
     removeLayerAction,
-    selectLayerAction
+    selectLayerAction, updateLayerAction
 } from "../../app-redux/creative-editor/actionCreators";
 import {layoutVariantList} from "./board/data";
 
@@ -53,7 +53,13 @@ const CreativeEditorPage = () => {
                 />
             </div>
             <div className={classes.rightPanelContainer}>
-                <RightPanelComponent layerModel={selectedLayerModel}/>
+                <RightPanelComponent
+                    layerModel={selectedLayerModel}
+                    onLayerUpdateEvent={(model: LayerModel) => {
+                        dispatch(updateLayerAction(model))
+                        // TODO: write layerModel update action in reducer
+                    }}
+                />
             </div>
         </div>
     )

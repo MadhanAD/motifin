@@ -10,34 +10,23 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d230885-27ed-464d-9994-fc243b195ae1" name="Default Changelist" comment="Layer Options are saved in save with redux.">
-      <change afterPath="$PROJECT_DIR$/src/components/TextOptions/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/TextOptions/text-options.component.tsx" afterDir="false" />
+    <list default="true" id="6d230885-27ed-464d-9994-fc243b195ae1" name="Default Changelist" comment="code refactored; state management was centralised.&#10;Panel and Board components are now fully independent. &#10;Data's are not maintained by component state instead it save in editor State and required data was received via props.">
+      <change afterPath="$PROJECT_DIR$/src/components/ImageOptions/image-options.component.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ImageOptions/styles.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utility/GlobalColors.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utility/GlobalStyle.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app-redux/AppState.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app-redux/AppState.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app-redux/appReducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app-redux/appReducers.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app-redux/creative-editor/actionCreators.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app-redux/creative-editor/actionCreators.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app-redux/creative-editor/models/ActionType.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app-redux/utils/ActionType.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app-redux/creative-editor/models/BoardState.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app-redux/creative-editor/state/EditorState.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app-redux/creative-editor/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app-redux/creative-editor/reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app-redux/reducers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app-redux/reducers.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ImageComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/custom-image.component.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RouterComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app-nav.router.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TextComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/custom-text.component.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TextOptions/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TextOptions/styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TextOptions/text-options.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TextOptions/text-options.component.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/custom-image.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/custom-image.component.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/custom-text.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/custom-text.component.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/LayerModel.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/layer.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/LayoutVariant.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/layout-variant.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/CreativeEditorPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/creative-editor.page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/Props.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/board/BoardComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/board/board.component.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/board/data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/board/data.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/board/styles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/board/styles.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/left-panel/LeftPanelComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/left-panel/left-panel.component.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/right-panel/RightPanelComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/right-panel/right-panel.component.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/creative-editor.page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/creative-editor.page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/right-panel/right-panel.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/right-panel/right-panel.component.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/right-panel/styles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/right-panel/styles.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/home.page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/home.page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/home.page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +44,12 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="ProjectId" id="1ZWzZ0nCYiLugrf1luPI4ORZTI7" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -80,19 +75,19 @@
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
     <property name="ts.external.directory.path" value="E:\reactjs\motifin\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\reactjs\motifin\src\assets" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\reactjs\motifin\src\app-redux\utils" />
       <recent name="E:\reactjs\motifin\src\app-redux" />
       <recent name="E:\reactjs\motifin\src\models" />
       <recent name="E:\reactjs\motifin\src\pages\creative-editor" />
       <recent name="E:\reactjs\motifin\src\components" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\reactjs\motifin\src\assets" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -151,7 +146,8 @@
       <workItem from="1586669326859" duration="10970000" />
       <workItem from="1586758185358" duration="2146000" />
       <workItem from="1586861636761" duration="598000" />
-      <workItem from="1586948302786" duration="6022000" />
+      <workItem from="1586948302786" duration="14653000" />
+      <workItem from="1587016198671" duration="17794000" />
     </task>
     <task id="LOCAL-00001" summary="Image and Text resizable task was completed">
       <created>1586514124225</created>
@@ -188,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586688570959</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="code refactored; state management was centralised.&#10;Panel and Board components are now fully independent. &#10;Data's are not maintained by component state instead it save in editor State and required data was received via props.">
+      <created>1586962247579</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1586962247579</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,7 +215,8 @@
     <MESSAGE value="Zoom on swipe is completed.&#10;need to apply that functionality in inc/dec button" />
     <MESSAGE value="Layout menu was loaded from Array.&#10;Transform was added in every variant as a value of 0.4&#10;Zoom options is in progress." />
     <MESSAGE value="Layer Options are saved in save with redux." />
-    <option name="LAST_COMMIT_MESSAGE" value="Layer Options are saved in save with redux." />
+    <MESSAGE value="code refactored; state management was centralised.&#10;Panel and Board components are now fully independent. &#10;Data's are not maintained by component state instead it save in editor State and required data was received via props." />
+    <option name="LAST_COMMIT_MESSAGE" value="code refactored; state management was centralised.&#10;Panel and Board components are now fully independent. &#10;Data's are not maintained by component state instead it save in editor State and required data was received via props." />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="22" key="#Deployment" timestamp="1586596224449">
@@ -239,22 +243,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1585204727898" />
-    <state width="1323" height="178" key="GridCell.Tab.0.bottom" timestamp="1586948327342">
+    <state width="1323" height="178" key="GridCell.Tab.0.bottom" timestamp="1587030623904">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586948327342" />
-    <state width="1323" height="178" key="GridCell.Tab.0.center" timestamp="1586948327342">
+    <state width="1323" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587030623904" />
+    <state width="1323" height="178" key="GridCell.Tab.0.center" timestamp="1587030623904">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586948327342" />
-    <state width="1323" height="178" key="GridCell.Tab.0.left" timestamp="1586948327342">
+    <state width="1323" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1587030623904" />
+    <state width="1323" height="178" key="GridCell.Tab.0.left" timestamp="1587030623904">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586948327342" />
-    <state width="1323" height="178" key="GridCell.Tab.0.right" timestamp="1586948327342">
+    <state width="1323" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1587030623904" />
+    <state width="1323" height="178" key="GridCell.Tab.0.right" timestamp="1587030623904">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586948327342" />
+    <state width="1323" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1587030623904" />
     <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1586709618512">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -307,10 +311,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="504" y="66" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" timestamp="1586524807963" />
-    <state x="164" y="20" width="998" height="708" key="SettingsEditor" timestamp="1586242163231">
+    <state x="164" y="20" width="998" height="708" key="SettingsEditor" timestamp="1587032084947">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="164" y="20" width="998" height="708" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1586242163231" />
+    <state x="164" y="20" width="998" height="708" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1587032084947" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1586020101206">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -319,6 +323,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="545" y="263" key="WebDeployment.AddServerDialog.v.1/0.0.1366.728@0.0.1366.728" timestamp="1586596183852" />
+    <state x="492" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1586971601612">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="492" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1586971601612" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1586614307557">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -327,9 +335,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="169" key="save.file.as.template.dialog/0.0.1366.728@0.0.1366.728" timestamp="1585836897811" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1586950636970">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1587055641770">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1586950636970" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1587055641770" />
   </component>
 </project>
