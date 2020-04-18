@@ -56,8 +56,8 @@ const CreativeEditorPage = () => {
                 <RightPanelComponent
                     layerModel={selectedLayerModel}
                     onLayerUpdateEvent={(model: LayerModel) => {
+                        console.log("right panel output ",model)
                         dispatch(updateLayerAction(model))
-                        // TODO: write layerModel update action in reducer
                     }}
                 />
             </div>

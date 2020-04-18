@@ -1,7 +1,7 @@
-import {Container, FormControl, Row} from "react-bootstrap";
-import React, {FormEvent} from "react";
+import {Button, Container, FormControl, Row} from "react-bootstrap";
+import React, {FormEvent, useState} from "react";
 import {LayerImageOptions} from "../../models/layer.model";
-import { styles } from "./styles";
+import {styles} from "./styles";
 
 export interface ImageOptionsProps {
     data: LayerImageOptions;
@@ -9,22 +9,27 @@ export interface ImageOptionsProps {
 }
 
 const ImageOptionComponent = (props: ImageOptionsProps) => {
+    const [imageUrl, setImageUrl] = useState<string>("")
     return (
         <Container style={styles.rootContainer}>
             <Row>
                 <FormControl
-                    type="file"
-                    accept=".png"
+                    type="text"
                     onChange={(event: FormEvent<HTMLInputElement>) => {
-                        const file = event.currentTarget?.files?.[0]
-                        if (file) {
-                            const option = props.data
-                            // @ts-ignore
-                            option.imageUrl = file?.uri
-                            props.onUpdateEvent(option)
-                        }
+                        setImageUrl(event.currentTarget.value)
                     }}
                 />
+            </Row>
+            <Row>
+                <Button variant="primary"
+                        onClick={() => {
+                            if (imageUrl !== "") {
+                                const model: LayerImageOptions = props.data
+                                model.imageUrl = imageUrl
+                                props.onUpdateEvent(model)
+                            }
+                        }}
+                >Update</Button>
             </Row>
         </Container>
     )

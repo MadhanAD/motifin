@@ -47,7 +47,6 @@ export const editorReducer: (previousState: EditorState, action: ActionType<Laye
                 if (data.layerOptions) data.layerOptions.isSelected = data.isSelected;
                 return data
             });
-            console.table(tempSelectedArray);
             return {
                 layerModelArray: tempSelectedArray,
                 selectedLayerModel: tempSelectedArray.find(element => element.isSelected)

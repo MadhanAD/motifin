@@ -13,6 +13,7 @@ const CustomImageComponent = (props: ImageProps) => {
     // @ts-ignore
     let imageRef = useRef<Image>(new window.Image());
     const imageSrc = new window.Image();
+    imageSrc.crossOrigin = "Anonymous"
     imageSrc.src = props.data?.imageUrl || ""
     return (
         <Fragment key={props.id}>

@@ -11,7 +11,6 @@ export interface TextOptionsProps {
 }
 
 const TextOptionsComponent = (props: TextOptionsProps) => {
-
     const [text, setText] = useState<string>(props.data && props.data.text ? props?.data.text : "")
     const [fontSize, setFontSize] = useState<number>(props.data && props.data.fontSize ? props.data.fontSize : 14)
     const [fontColor, setFontColor] = useState<string>(props.data && props.data.fontColor ? props.data.fontColor : GlobalColors.black)
@@ -20,18 +19,17 @@ const TextOptionsComponent = (props: TextOptionsProps) => {
         <Container style={{...GlobalStyle.noSpace, ...styles.rootContainer}}>
             <Row>
                 <FormLabel>Text Values</FormLabel>
-                <FormControl
-                    style={styles.formControl}
-                    type="text"
-                    placeholder="Enter your text"
-                    defaultValue={props.data?.text}
-                    onChange={(event: FormEvent<HTMLInputElement>) => setText(event.currentTarget.value)}
+                <FormControl style={styles.formControl}
+                       type="text"
+                       placeholder="Enter your text"
+                       defaultValue={text}
+                       onChange={(event: FormEvent<HTMLInputElement>) => setText(event.currentTarget.value)}
                 />
             </Row>
             <Row>
                 <FormControl
                     style={styles.formControl}
-                    defaultValue={props.data?.fontSize}
+                    defaultValue={fontSize}
                     type="number"
                     max="5" min="2"
                     placeholder="Font size"
@@ -42,7 +40,7 @@ const TextOptionsComponent = (props: TextOptionsProps) => {
                 <FormControl
                     style={styles.formControl}
                     type="text"
-                    defaultValue={props.data?.fontColor}
+                    defaultValue={fontColor}
                     placeholder="#000"
                     onChange={(event: FormEvent<HTMLInputElement>) => setFontColor(event.currentTarget.value)}
                 />
@@ -54,9 +52,9 @@ const TextOptionsComponent = (props: TextOptionsProps) => {
                     onClick={() => {
                         const option: LayerTextOptions = {
                             ...props.data,
-                            text: text,
-                            fontColor: fontColor,
-                            fontSize: fontSize
+                            text,
+                            fontColor,
+                            fontSize
                         }
                         props.onUpdateEvent(option)
                     }}
