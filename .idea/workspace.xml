@@ -10,13 +10,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d230885-27ed-464d-9994-fc243b195ae1" name="Default Changelist" comment="Text edit option was integrated.">
+    <list default="true" id="6d230885-27ed-464d-9994-fc243b195ae1" name="Default Changelist" comment="ImageComponent is basics are completed. image was loaded from url. able to edit image. some images can't use due to CORS issue. this issue will be fixed once we host images in our own server">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app-redux/creative-editor/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app-redux/creative-editor/reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ImageOptions/image-options.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ImageOptions/image-options.component.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TextOptions/text-options.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TextOptions/text-options.component.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/custom-image.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/custom-image.component.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/layout-variant.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/layout-variant.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/board/board.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/board/board.component.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/board/data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/board/data.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/board/styles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/board/styles.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/creative-editor.page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/creative-editor.page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/right-panel/right-panel.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/right-panel/right-panel.component.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/styles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/styles.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +141,7 @@
       <workItem from="1586948302786" duration="14653000" />
       <workItem from="1587016198671" duration="19279000" />
       <workItem from="1587105386149" duration="4759000" />
-      <workItem from="1587190365352" duration="5445000" />
+      <workItem from="1587190365352" duration="12306000" />
     </task>
     <task id="LOCAL-00001" summary="Image and Text resizable task was completed">
       <created>1586514124225</created>
@@ -190,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587056796604</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="ImageComponent is basics are completed. image was loaded from url. able to edit image. some images can't use due to CORS issue. this issue will be fixed once we host images in our own server">
+      <created>1587206537211</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1587206537211</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,7 +225,8 @@
     <MESSAGE value="Layer Options are saved in save with redux." />
     <MESSAGE value="code refactored; state management was centralised.&#10;Panel and Board components are now fully independent. &#10;Data's are not maintained by component state instead it save in editor State and required data was received via props." />
     <MESSAGE value="Text edit option was integrated." />
-    <option name="LAST_COMMIT_MESSAGE" value="Text edit option was integrated." />
+    <MESSAGE value="ImageComponent is basics are completed. image was loaded from url. able to edit image. some images can't use due to CORS issue. this issue will be fixed once we host images in our own server" />
+    <option name="LAST_COMMIT_MESSAGE" value="ImageComponent is basics are completed. image was loaded from url. able to edit image. some images can't use due to CORS issue. this issue will be fixed once we host images in our own server" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="22" key="#Deployment" timestamp="1586596224449">
@@ -243,22 +253,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1585204727898" />
-    <state width="1323" height="178" key="GridCell.Tab.0.bottom" timestamp="1587202575235">
+    <state width="1323" height="178" key="GridCell.Tab.0.bottom" timestamp="1587221972290">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587202575235" />
-    <state width="1323" height="178" key="GridCell.Tab.0.center" timestamp="1587202575235">
+    <state width="1323" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587221972290" />
+    <state width="1323" height="178" key="GridCell.Tab.0.center" timestamp="1587221972290">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1587202575235" />
-    <state width="1323" height="178" key="GridCell.Tab.0.left" timestamp="1587202575235">
+    <state width="1323" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1587221972290" />
+    <state width="1323" height="178" key="GridCell.Tab.0.left" timestamp="1587221972290">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1587202575235" />
-    <state width="1323" height="178" key="GridCell.Tab.0.right" timestamp="1587202575235">
+    <state width="1323" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1587221972290" />
+    <state width="1323" height="178" key="GridCell.Tab.0.right" timestamp="1587221972290">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1587202575235" />
+    <state width="1323" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1587221972290" />
     <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1587200089055">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -335,9 +345,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="169" key="save.file.as.template.dialog/0.0.1366.728@0.0.1366.728" timestamp="1585836897811" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1587199787448">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1587209390129">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1587199787448" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1587209390129" />
   </component>
 </project>

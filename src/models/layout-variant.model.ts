@@ -1,11 +1,11 @@
 export interface LayoutVariantModel {
-    id: number
+    id: string
     title: string;
     sizeList: LayoutVariantSize[];
 }
 
 export interface LayoutVariantSize {
-    id: number;
+    id: string;
     title: string;
     width: number;
     height: number;

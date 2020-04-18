@@ -3,7 +3,6 @@ import {makeStyles} from "@material-ui/core/styles";
 export const useStyles = makeStyles({
     rootContainer: {
         height: "100vh",
-        display: "flex",
         flexDirection: "row"
     },
     leftPanelContainer: {
