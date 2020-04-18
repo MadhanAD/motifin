@@ -10,24 +10,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d230885-27ed-464d-9994-fc243b195ae1" name="Default Changelist" comment="Board component was migrated from material to bootstrap.&#10;Zooming issue still exists, need to fix that.">
-      <change afterPath="$PROJECT_DIR$/src/components/Icons.tsx" afterDir="false" />
+    <list default="true" id="6d230885-27ed-464d-9994-fc243b195ae1" name="Default Changelist" comment="material dependency removed. fontAwesome added.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TextOptions/text-options.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TextOptions/text-options.component.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/custom-text.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/custom-text.component.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/board/board.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/board/board.component.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/board/styles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/board/styles.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/creative-editor.page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/creative-editor.page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/left-panel/left-panel.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/left-panel/left-panel.component.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/left-panel/styles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/left-panel/styles.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/right-panel/right-panel.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/right-panel/right-panel.component.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/right-panel/styles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/right-panel/styles.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/styles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/styles.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/home.page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/home.page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/home/styles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/styles.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utility/GlobalStyle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/GlobalStyle.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -153,7 +138,7 @@
       <workItem from="1587105386149" duration="4759000" />
       <workItem from="1587190365352" duration="13889000" />
       <workItem from="1587224111494" duration="120000" />
-      <workItem from="1587224242599" duration="5590000" />
+      <workItem from="1587224242599" duration="6206000" />
     </task>
     <task id="LOCAL-00001" summary="Image and Text resizable task was completed">
       <created>1586514124225</created>
@@ -218,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587222630936</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="material dependency removed. fontAwesome added.">
+      <created>1587230785001</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1587230785001</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,11 +219,21 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="1">
+          <value>
+            <State />
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State />
           </value>
         </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="1" value="TOOL_WINDOW" />
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
@@ -246,7 +248,8 @@
     <MESSAGE value="Text edit option was integrated." />
     <MESSAGE value="ImageComponent is basics are completed. image was loaded from url. able to edit image. some images can't use due to CORS issue. this issue will be fixed once we host images in our own server" />
     <MESSAGE value="Board component was migrated from material to bootstrap.&#10;Zooming issue still exists, need to fix that." />
-    <option name="LAST_COMMIT_MESSAGE" value="Board component was migrated from material to bootstrap.&#10;Zooming issue still exists, need to fix that." />
+    <MESSAGE value="material dependency removed. fontAwesome added." />
+    <option name="LAST_COMMIT_MESSAGE" value="material dependency removed. fontAwesome added." />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="22" key="#Deployment" timestamp="1586596224449">
@@ -357,6 +360,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="492" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1586971601612" />
+    <state x="484" y="270" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1587230890966">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="484" y="270" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1366.728@0.0.1366.728" timestamp="1587230890966" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1587224503445">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -365,9 +372,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="169" key="save.file.as.template.dialog/0.0.1366.728@0.0.1366.728" timestamp="1585836897811" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1587230413606">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1587231039963">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1587230413606" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1587231039963" />
   </component>
 </project>
