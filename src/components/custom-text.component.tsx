@@ -2,6 +2,7 @@ import {Text, Transformer} from "react-konva";
 import Konva from "konva";
 import React, {Fragment, useRef} from "react";
 import {LayerTextOptions} from "../models/layer.model";
+import {boundLimiter} from "react-zoom-pan-pinch/dist/store/utils";
 
 export interface TextProps {
     id?: string;
@@ -31,7 +32,7 @@ const CustomTextComponent = (props: TextProps) => {
             />
             {
                 props.data.isSelected && (
-                    <Transformer ref={(node) => {
+                    <Transformer enabledAnchors={["middle-left", "middle-right"]} ref={(node) => {
                         if (props.data.isSelected) {
                             node?.setNode(textRef.current);
                             node?.getLayer()?.batchDraw();

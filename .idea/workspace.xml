@@ -10,15 +10,25 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d230885-27ed-464d-9994-fc243b195ae1" name="Default Changelist" comment="ImageComponent is basics are completed. image was loaded from url. able to edit image. some images can't use due to CORS issue. this issue will be fixed once we host images in our own server">
+    <list default="true" id="6d230885-27ed-464d-9994-fc243b195ae1" name="Default Changelist" comment="Board component was migrated from material to bootstrap.&#10;Zooming issue still exists, need to fix that.">
+      <change afterPath="$PROJECT_DIR$/src/components/Icons.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/layout-variant.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/layout-variant.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TextOptions/text-options.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TextOptions/text-options.component.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/custom-text.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/custom-text.component.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/board/board.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/board/board.component.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/board/data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/board/data.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/board/styles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/board/styles.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/creative-editor.page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/creative-editor.page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/left-panel/left-panel.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/left-panel/left-panel.component.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/left-panel/styles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/left-panel/styles.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/right-panel/right-panel.component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/right-panel/right-panel.component.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/right-panel/styles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/right-panel/styles.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/creative-editor/styles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/creative-editor/styles.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/home.page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/home.page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/styles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/styles.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/GlobalStyle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/GlobalStyle.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +39,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -141,7 +151,9 @@
       <workItem from="1586948302786" duration="14653000" />
       <workItem from="1587016198671" duration="19279000" />
       <workItem from="1587105386149" duration="4759000" />
-      <workItem from="1587190365352" duration="12306000" />
+      <workItem from="1587190365352" duration="13889000" />
+      <workItem from="1587224111494" duration="120000" />
+      <workItem from="1587224242599" duration="5590000" />
     </task>
     <task id="LOCAL-00001" summary="Image and Text resizable task was completed">
       <created>1586514124225</created>
@@ -199,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587206537211</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Board component was migrated from material to bootstrap.&#10;Zooming issue still exists, need to fix that.">
+      <created>1587222630936</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1587222630936</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,7 +245,8 @@
     <MESSAGE value="code refactored; state management was centralised.&#10;Panel and Board components are now fully independent. &#10;Data's are not maintained by component state instead it save in editor State and required data was received via props." />
     <MESSAGE value="Text edit option was integrated." />
     <MESSAGE value="ImageComponent is basics are completed. image was loaded from url. able to edit image. some images can't use due to CORS issue. this issue will be fixed once we host images in our own server" />
-    <option name="LAST_COMMIT_MESSAGE" value="ImageComponent is basics are completed. image was loaded from url. able to edit image. some images can't use due to CORS issue. this issue will be fixed once we host images in our own server" />
+    <MESSAGE value="Board component was migrated from material to bootstrap.&#10;Zooming issue still exists, need to fix that." />
+    <option name="LAST_COMMIT_MESSAGE" value="Board component was migrated from material to bootstrap.&#10;Zooming issue still exists, need to fix that." />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="22" key="#Deployment" timestamp="1586596224449">
@@ -253,70 +273,70 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1585204727898" />
-    <state width="1323" height="178" key="GridCell.Tab.0.bottom" timestamp="1587221972290">
+    <state width="1323" height="178" key="GridCell.Tab.0.bottom" timestamp="1587228892802">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587221972290" />
-    <state width="1323" height="178" key="GridCell.Tab.0.center" timestamp="1587221972290">
+    <state width="1323" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587228892802" />
+    <state width="1323" height="178" key="GridCell.Tab.0.center" timestamp="1587228892802">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1587221972290" />
-    <state width="1323" height="178" key="GridCell.Tab.0.left" timestamp="1587221972290">
+    <state width="1323" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1587228892802" />
+    <state width="1323" height="178" key="GridCell.Tab.0.left" timestamp="1587228892802">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1587221972290" />
-    <state width="1323" height="178" key="GridCell.Tab.0.right" timestamp="1587221972290">
+    <state width="1323" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1587228892802" />
+    <state width="1323" height="178" key="GridCell.Tab.0.right" timestamp="1587228892802">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1587221972290" />
-    <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1587200089055">
+    <state width="1323" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1587228892802" />
+    <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1587224085157">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587200089055" />
-    <state width="1323" height="223" key="GridCell.Tab.1.center" timestamp="1587200089055">
+    <state width="1323" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587224085157" />
+    <state width="1323" height="223" key="GridCell.Tab.1.center" timestamp="1587224085156">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1587200089055" />
-    <state width="1323" height="223" key="GridCell.Tab.1.left" timestamp="1587200089055">
+    <state width="1323" height="223" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1587224085156" />
+    <state width="1323" height="223" key="GridCell.Tab.1.left" timestamp="1587224085156">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1587200089055" />
-    <state width="1323" height="223" key="GridCell.Tab.1.right" timestamp="1587200089055">
+    <state width="1323" height="223" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1587224085156" />
+    <state width="1323" height="223" key="GridCell.Tab.1.right" timestamp="1587224085156">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1587200089055" />
-    <state width="1323" height="223" key="GridCell.Tab.2.bottom" timestamp="1587200089057">
+    <state width="1323" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1587224085156" />
+    <state width="1323" height="223" key="GridCell.Tab.2.bottom" timestamp="1587224085157">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587200089057" />
-    <state width="1323" height="223" key="GridCell.Tab.2.center" timestamp="1587200089057">
+    <state width="1323" height="223" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587224085157" />
+    <state width="1323" height="223" key="GridCell.Tab.2.center" timestamp="1587224085157">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1587200089057" />
-    <state width="1323" height="223" key="GridCell.Tab.2.left" timestamp="1587200089055">
+    <state width="1323" height="223" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1587224085157" />
+    <state width="1323" height="223" key="GridCell.Tab.2.left" timestamp="1587224085157">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1587200089055" />
-    <state width="1323" height="223" key="GridCell.Tab.2.right" timestamp="1587200089057">
+    <state width="1323" height="223" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1587224085157" />
+    <state width="1323" height="223" key="GridCell.Tab.2.right" timestamp="1587224085157">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1587200089057" />
-    <state width="1323" height="223" key="GridCell.Tab.3.bottom" timestamp="1587200089057">
+    <state width="1323" height="223" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1587224085157" />
+    <state width="1323" height="223" key="GridCell.Tab.3.bottom" timestamp="1587224085157">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.3.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587200089057" />
-    <state width="1323" height="223" key="GridCell.Tab.3.center" timestamp="1587200089057">
+    <state width="1323" height="223" key="GridCell.Tab.3.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587224085157" />
+    <state width="1323" height="223" key="GridCell.Tab.3.center" timestamp="1587224085157">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.3.center/0.0.1366.728@0.0.1366.728" timestamp="1587200089057" />
-    <state width="1323" height="223" key="GridCell.Tab.3.left" timestamp="1587200089057">
+    <state width="1323" height="223" key="GridCell.Tab.3.center/0.0.1366.728@0.0.1366.728" timestamp="1587224085157" />
+    <state width="1323" height="223" key="GridCell.Tab.3.left" timestamp="1587224085157">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.3.left/0.0.1366.728@0.0.1366.728" timestamp="1587200089057" />
-    <state width="1323" height="223" key="GridCell.Tab.3.right" timestamp="1587200089057">
+    <state width="1323" height="223" key="GridCell.Tab.3.left/0.0.1366.728@0.0.1366.728" timestamp="1587224085157" />
+    <state width="1323" height="223" key="GridCell.Tab.3.right" timestamp="1587224085157">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="223" key="GridCell.Tab.3.right/0.0.1366.728@0.0.1366.728" timestamp="1587200089057" />
+    <state width="1323" height="223" key="GridCell.Tab.3.right/0.0.1366.728@0.0.1366.728" timestamp="1587224085157" />
     <state x="504" y="66" key="RollbackChangesDialog" timestamp="1586524807963">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -337,17 +357,17 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="492" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1586971601612" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1586614307557">
+    <state x="339" y="162" key="run.anything.popup" timestamp="1587224503445">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1586614307557" />
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1587224503445" />
     <state x="463" y="169" key="save.file.as.template.dialog" timestamp="1585836897811">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="169" key="save.file.as.template.dialog/0.0.1366.728@0.0.1366.728" timestamp="1585836897811" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1587209390129">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1587230413606">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1587209390129" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1587230413606" />
   </component>
 </project>

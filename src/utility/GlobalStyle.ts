@@ -1,6 +1,6 @@
 export const GlobalStyle = {
     noSpace: {
-        padding: 0,
-        margin: 0
+        padding: "0px",
+        margin: "0px"
     }
 }

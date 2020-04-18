@@ -1,28 +1,13 @@
-import {makeStyles} from "@material-ui/core/styles";
+import {GlobalColors} from "../../../utility/GlobalColors";
+import {GlobalStyle} from "../../../utility/GlobalStyle";
 
-export const useStyles = makeStyles({
+export const styles = {
     rootContainer: {
-        display: "flex",
-        flexDirection: "column",
-        maxHeight: "100vh"
-    },
-    titleContainer: {
-        flex: 0.5,
-    },
-    formContainer: {
-        flex: 2,
-        display: "flex",
-        flexDirection: "column"
-    },
-    listContainer: {
-        flex: 7.5
+        height: "100vh",
+        backgroundColor: GlobalColors.deepPurple500,
+        ...GlobalStyle.noSpace
     },
     listItemContainer: {
-      cursor: "pointer"
-    },
-    listContentContainer: {
-        height: "71vh",
-        width: "100%",
-        overflow: "auto"
+        cursor: "pointer"
     }
-});
+}

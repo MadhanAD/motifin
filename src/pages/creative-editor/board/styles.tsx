@@ -1,8 +1,11 @@
 import {LayoutVariantSize} from "../../../models/layout-variant.model";
+import {GlobalColors} from "../../../utility/GlobalColors";
+import {GlobalStyle} from "../../../utility/GlobalStyle";
 
 export const styles = {
     rootContainer: {
-
+        backgroundColor: GlobalColors.deepPurple500,
+        ...GlobalStyle.noSpace,
     }
 }
 

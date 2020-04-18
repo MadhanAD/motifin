@@ -16,7 +16,7 @@ const TextOptionsComponent = (props: TextOptionsProps) => {
     const [fontColor, setFontColor] = useState<string>(props.data && props.data.fontColor ? props.data.fontColor : GlobalColors.black)
 
     return (
-        <Container style={{...GlobalStyle.noSpace, ...styles.rootContainer}}>
+        <Container style={{ ...styles.rootContainer}}>
             <Row>
                 <FormLabel>Text Values</FormLabel>
                 <FormControl style={styles.formControl}

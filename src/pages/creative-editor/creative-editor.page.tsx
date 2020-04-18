@@ -15,6 +15,7 @@ import {
 } from "../../app-redux/creative-editor/actionCreators";
 import {layoutVariantList} from "./board/data";
 import {Col, Container, Row} from "react-bootstrap";
+import {styles} from "./styles";
 
 
 const CreativeEditorPage = () => {
@@ -31,8 +32,8 @@ const CreativeEditorPage = () => {
 
     // const classes = useStyles();
     return (
-        <Container fluid>
-            <Row>
+        <Container fluid style={styles.rootContainer}>
+            <Row noGutters={true}>
                 <Col sm={2}>
                     <LeftPanelComponent
                         layerModelArray={layerModelArray}

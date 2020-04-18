@@ -1,20 +1,7 @@
-import {makeStyles} from "@material-ui/core/styles";
+import {GlobalStyle} from "../../utility/GlobalStyle";
 
-export const useStyles = makeStyles({
+export const styles = {
     rootContainer: {
-        height: "100vh",
-        flexDirection: "row"
-    },
-    leftPanelContainer: {
-        flex: 1.5,
-        backgroundColor: "#009988"
-    },
-    boardContainer: {
-        flex: 6.5,
-        backgroundColor: "#889900"
-    },
-    rightPanelContainer: {
-        flex: 2,
-        backgroundColor: '#112233'
+        ...GlobalStyle.noSpace,
     }
-});
+}

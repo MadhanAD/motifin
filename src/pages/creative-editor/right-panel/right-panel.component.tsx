@@ -12,7 +12,7 @@ export interface RightPanelProps {
 }
 
 export const RightPanelComponent = (props: RightPanelProps) => {
-    return <Container style={{...styles.rootContainer, ...GlobalStyle.noSpace}}>
+    return <Container style={styles.rootContainer}>
         <Col style={GlobalStyle.noSpace}>
             <section>
                 {

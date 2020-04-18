@@ -44,8 +44,8 @@ export const BoardComponent = (props: BoardProps) => {
 
 
     return (
-        <Container fluid style={{backgroundColor: GlobalColors.black, ...GlobalStyle.noSpace}}>
-            <Col style={{backgroundColor: "#fff"}}>
+        <Container style={styles.rootContainer}>
+            <Col sm={12}>
                 <Row className="align-content-center"
                      style={{backgroundColor: GlobalColors.deepPurple500, height: "10vh"}}>
                     <Col sm={4}>

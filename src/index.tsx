@@ -7,8 +7,13 @@ import {Provider} from "react-redux";
 import {store} from "./app-redux/store";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import {library} from "@fortawesome/fontawesome-svg-core";
+import {faEnvelope, faKey} from "@fortawesome/free-solid-svg-icons";
+
+library.add(faEnvelope, faKey)
+
 ReactDOM.render(
-    <Provider store={store} >
+    <Provider store={store}>
         <AppRouter/>
     </Provider>
     , document.getElementById('root'));
