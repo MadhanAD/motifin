@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6e2c8755ea383a799f2311b3bdc91e02",
+    "revision": "661a73807d5a62160b25f2a9b844e408",
     "url": "/motifin/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/motifin/static/css/2.de424728.chunk.css"
   },
   {
-    "revision": "55d092661fb626a96ed9",
+    "revision": "c7eb37bad52adc320116",
     "url": "/motifin/static/css/main.5ecd60fb.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/motifin/static/js/2.37b1d9a7.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "55d092661fb626a96ed9",
-    "url": "/motifin/static/js/main.69568af7.chunk.js"
+    "revision": "c7eb37bad52adc320116",
+    "url": "/motifin/static/js/main.66e53b3e.chunk.js"
   },
   {
     "revision": "2a48dafb9029a303b64d",
